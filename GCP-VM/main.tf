@@ -47,4 +47,4 @@ resource "google_compute_instance" "test_vm" {
   depends_on = [
     google_compute_address.test_vm_ip
   ]
-}
+  
