@@ -21,7 +21,7 @@ resource "google_compute_instance" "test_vm" {
     mode = "READ_WRITE"
   }
 
-  machine_type = "e2-medium"
+  machine_type = "e2-medium" {
   metadata = 
     enable-oslogin     = "true"
     # user-data          = "#infoblox-config\ntemp_license: nios IB-V825 enterprise dns dhcp cloud\nremote_console_enabled: y"
