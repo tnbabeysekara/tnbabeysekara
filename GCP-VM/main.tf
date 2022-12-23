@@ -1,4 +1,4 @@
-resource "google_compute_address" "test_vm_ip" {
+resource "google_compute_address" "test_vm-ip" {
   #address      = "10.162.95.77"
   address_type = "INTERNAL"
   name         = "test-vm-ip"
