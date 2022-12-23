@@ -5,31 +5,14 @@ on:
       - master
 
 jobs:
-  GCP-Project-VendingMachine:
-    name: 'Terraform Validate'
+  validate:
     runs-on: ubuntu-latest
-
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
-    defaults:
-      run:
-        shell: bash
+    name: Validate terraform
     steps:
-    # Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    # Install the latest version of Terragrunt CLI and configure the Terragrunt CLI configuration file with a Terragrunt Cloud user API token
-    - name: Setup Terraform v1.2.6
-      uses: hashicorp/setup-Terraform@v1
-      with:
-        terraform_version: 1.2.6
-        terraform_wrapper: true
-    - name: Setup Terraform version
-      run: terraform --version
-    - name: Setup Terraform wrapper path
-      run: which terraform
-
-    - name: Terraform Plan
-      id: Plan
-      run: |
-          terraform validate
+      - name: terraform validate
+        uses: dflook/terraform-validate@v1
+        with:
+          path: ./
