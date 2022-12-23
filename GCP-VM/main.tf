@@ -1,4 +1,4 @@
-resource "google_compute_address" "test_vm-ip" {
+resource "google_compute_address" "test_vm_ip" {
   #address      = "10.162.95.77"
   address_type = "INTERNAL"
   name         = "test-vm-ip"
@@ -22,7 +22,7 @@ resource "google_compute_instance" "test_vm" {
   }
 
   machine_type = "e2-medium"
-  metadata = {
+  metadata = 
     enable-oslogin     = "true"
     # user-data          = "#infoblox-config\ntemp_license: nios IB-V825 enterprise dns dhcp cloud\nremote_console_enabled: y"
     serial-port-enable = "true"
